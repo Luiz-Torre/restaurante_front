@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    
+    <!-- Inclua o CSS do Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Inclua o seu arquivo CSS personalizado -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Formulário Bootstrap -->
+                <form id="consulta-form" class="d-flex hide-on-print" >
+                    <div class="flex-fill mr-2 hide-on-print">
+                        <div class="form-group same-height hide-on-print">
+                            <label for="telefone">Telefone:</label>
+                            <input type="text" class="form-control hide-on-print" id="telefone">
+                        </div>
+                        <button type="button" id="buscar-cliente" class="btn btn-primary hide-on-print" onclick="consultarCliente()">Buscar cliente</button>
+                        
+                        <!-- Resultados do cliente (inicialmente ocultos) -->
+                        <div id="result" class="mt-4 hidden hide-on-print">
+                            <div class="form-group hide-on-print">
+                                <label for="nome">Nome:</label>
+                                <input type="text" class="form-control hide-on-print" id="nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="logradouro">Logradouro:</label>
+                                <input type="text" class="form-control hide-on-print" id="logradouro">
+                            </div>
+                            <div class="form-group hide-on-print">
+                                <label for="bairro">Bairro:</label>
+                                <input type="text" class="form-control hide-on-print" id="bairro">
+                            </div>
+                            <div class="form-group hide-on-print">
+                                <label for="numero">Número:</label>
+                                <input type="text" class="form-control hide-on-print" id="numero">
+                            </div>
+                            <div class="form-group hide-on-print">
+                                <label for="complemento">Complemento:</label>
+                                <input type="text" class="form-control hide-on-print" id="complemento">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-fill ml-2 hide-on-print">
+                        <div class="form-group same-height hide-on-print">
+                            <label for="prato-dropdown">Selecionar Prato:</label>
+                            <select id="prato-dropdown" class="form-control hide-on-print">
+                                <!-- Opção padrão no dropdown -->
+                                <option value="" disabled selected>Selecione um prato</option>
+                            </select>
+                        </div>
+                        <div id="prato-detalhes" class="ml-2 mt-5 hidden hide-on-print">
+                            <br><br>
+                            <h2>Detalhes do Prato</h2>
+                            <p><strong>Nome:</strong> <span id="prato-nome"></span></p>
+                            <p><strong>Preço:</strong> <span id="prato-preco"></span></p>
+                            <p><strong>Descrição:</strong> <span id="prato-descricao"></span></p>
+                            <div class="form-group hide-on-print">
+                                <label for="observacao">Observação:</label>
+                                <input type="text" class="form-control" id="observacao">
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-success mt-3 hidden hide-on-print" id="fazer-pedido" onclick="fazerPedido()">Fazer Pedido</button>
+
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container  hide-on-screen">
+        <div class="client-data  hide-on-screen">
+            <h1>Detalhes do Pedido</h1>
+
+            <h5>Detalhes do Cliente</h5>
+            <!-- Incluir aqui os dados do cliente que deseja imprimir -->
+            <p><strong>Nome:</strong> <span id="imprimir-nome"></span></p>
+            <p><strong>Telefone:</strong> <span id="imprimir-telefone"></span></p>
+            <p><strong>Logradouro:</strong> <span id="imprimir-logradouro"></span></p>
+            <p><strong>Numero:</strong> <span id="imprimir-numero"></span></p>
+            <p><strong>Complemento:</strong> <span id="imprimir-complemento"></span></p>
+            <p><strong>Bairro:</strong> <span id="imprimir-bairro"></span></p>
+    
+            <br>
+            <h5>Detalhes do Prato</h5>
+            <p><strong>Nome:</strong> <span id="imprimir-prato-nome"></span></p>
+            <p><strong>Preço:</strong> <span id="imprimir-prato-preco"></span></p>
+            <p><strong>Descrição:</strong> <span id="imprimir-prato-descricao"></span></p>
+            <p><strong>Observação:</strong> <span id="imprimir-observacao"></span></p>
+
+            <!-- Outros dados do cliente aqui -->
+        </div>
+        <div class="footer  hide-on-screen">
+            <!-- Rodapé da página de impressão -->
+            <p>© 2023 Paulinha Restaurante</p>
+        </div>
+    </div>
+    
+
+    <!-- Inclua o JavaScript do Bootstrap (JQuery e Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Inclua o seu arquivo JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>

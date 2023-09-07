@@ -1,0 +1,68 @@
+#consulta-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ocultar na tela normal */
+.hide-on-screen {
+    display: none;
+}
+
+/* Tornar visível na tela de impressão */
+@media print {
+    .hide-on-screen {
+        display: block !important;
+    }
+}
+
+/* Estilos para ocultar elementos na tela de impressão */
+@media print {
+    .hide-on-print {
+        display: none !important;
+    }
+}
+
+
+/* Estilo para ocultar os campos de resultado */
+.hidden {
+    display: none;
+}
+
+/* Estilo para alinhar a altura dos campos de telefone e seleção de prato */
+.same-height {
+    min-height: 100px; /* Ajuste a altura conforme necessário */
+}
+
+/* Estilos para a página de impressão */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o conteúdo da impressão (dados do cliente) */
+.client-data {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Estilos para o rodapé da impressão */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
